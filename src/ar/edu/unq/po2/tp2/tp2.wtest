@@ -1,0 +1,27 @@
+import tp2.*
+
+
+describe "test" {
+    const empresa = new Empresa(nombre="empresa", cuit=123456)
+    const juan = new EmpleadoPermanente(nombre="juan", direccion="calle falsa 123", estadoCivil="soltero", edad=24, cantHijos=0, antiguedad=5)
+    const pepe = new EmpleadoTemporario(nombre="pepe", direccion="calle fasa 234", estadoCivil="casado", edad=55, fechaDeFin="septiembre", cantHorasExtras=18)
+    const jose = new EmpleadoContratado(nombre="jose", direccion="calle falsa 345",estadoCivil="soltero", edad=62, numeroDeContrato=3, medioDePago="transferencia", sueldoBasico=500)
+
+  test "test juan" {
+    assert.equals(250, juan.getSueldoBruto())
+    assert.equals(62.5, juan.getRetenciones())
+    assert.equals(187.5, juan.getSueldo())
+  }
+
+  test "test pepe" {
+    assert.equals(720, pepe.getSueldoBruto())
+    assert.equals(259, pepe.getRetenciones())
+    assert.equals(461, pepe.getSueldo())
+  }
+
+  test "test jose" {
+    assert.equals(500, jose.getSueldoBruto())
+    assert.equals(50, jose.getRetenciones())
+    assert.equals(450, jose.getSueldo())
+  }
+}
